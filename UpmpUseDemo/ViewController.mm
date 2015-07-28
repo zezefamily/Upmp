@@ -25,7 +25,11 @@
     //@"00":代表接入生产环境(正式版 本需要); @"01":代表接入开发测试环境(测 试版本需要);
     //@param tn 交易流水号
     BOOL isStart = [UPPayPluginPro startPay:waterNumber mode:@"01" viewController:self delegate:self];
-    NSLog(@"isStart == %d",isStart);
+    if(isStart == YES){
+        NSLog(@"支付请求发送成功");
+    }else{
+        NSLog(@"支付请求发送失败");
+    }
     
 }
 #pragma mark - 银联支付回调
